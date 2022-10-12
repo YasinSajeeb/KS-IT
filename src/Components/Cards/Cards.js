@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const Cards = () => {
     const cards = useLoaderData();
     return (
-        <div className='container'>
+        <div className='grid grid-cols-4 gap-4 mt-8'>
             {
                 cards.data.map(card => <Card
                 key={cards.data.id}
