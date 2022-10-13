@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './Components/Blog/Blog';
 import Cards from './Components/Cards/Cards';
+import Quiz from './Components/Quiz/Quiz';
 import Statistics from './Components/Statistics/Statistics';
 import Main from './Layouts/Main';
 
@@ -15,6 +16,13 @@ function App() {
         loader: ()=> fetch('cards.json'),
         element: <Cards></Cards>
       },
+      {
+        path: '/quiz/:quizId',
+        loader: async ({params}) =>{
+          return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+        },
+        element: <Quiz></Quiz>
+      },
     { path: '/statistics', 
     element: <Statistics></Statistics>
   },
@@ -23,6 +31,9 @@ function App() {
   }   
     ]
   },
+  {
+    path: '*', element: <h3 className='text-center font-extrabold'>Ooops, Wrong page!!!!</h3>
+  }
   ])
   return (
     <div className="App">

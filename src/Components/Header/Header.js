@@ -13,8 +13,9 @@ const Header = () => {
             </Link>
             
             <div className='text-xl'>
-                <Link to='/statistics'>Statistics</Link>
-                <Link to='/blog' className='ml-10'>Blog</Link>
+                <Link to='/'>Home</Link>
+                <Link to='/statistics' className='mx-10'>Statistics</Link>
+                <Link to='/blog'>Blog</Link>
             </div>
             </div>
         </nav>
