@@ -19,28 +19,20 @@ const Question = ({questionn}) => {
         }
     };
 
-    // const answer = ()=>{
+    const rightAnswer = (answer)=>{
+        toast.success(correctAnswer, {
+            position: toast.POSITION.TOP_CENTER
+          });
+    }
 
-    // }
     return (
         
         <div>
             <div className='w-1/2 mx-auto border-red-400 border-2 my-4 rounded'>
                 <div className='flex justify-around'>
-                    <h3 className='text-center my-5'> <strong>Q.</strong> {question.slice(3, -4)}</h3>
-                <button>
-<label htmlFor="my-modal"><EyeIcon className='w-4 right-0'></EyeIcon></label>
-
-<input type="checkbox" id="my-modal" className="modal-toggle" />
-<div className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Correct Answer:</h3>
-    <p className="py-4"> {correctAnswer} </p>
-    <div className="modal-action">
-      <label htmlFor="my-modal" className="btn">Yay!</label>
-    </div>
-  </div>
-</div>
+                    <h3 className='my-5'> <strong>Q.</strong> {question.slice(3, -4)}</h3>
+                <button onClick={()=> rightAnswer()}>
+                    <EyeIcon className='w-4 right-0'></EyeIcon>
 </button>
                 </div>
             <div>
