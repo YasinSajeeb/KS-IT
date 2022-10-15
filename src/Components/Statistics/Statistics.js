@@ -24,14 +24,16 @@ const Statistics = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center underline text-2xl my-8 font-extrabold underline-offset-4'>Chart of Total Quizes
+            <h2 className='text-center underline text-2xl my-8 font-extrabold underline-offset-4'>Chart of Total Quizzes
             </h2>
-                <LineChart className='mx-auto sm:w-10 sm:h-10' width={400} height={300} data={charts}>
+            <ResponsiveContainer className='mx-auto' width="80%" aspect={2}>
+                <LineChart width={400} height={300} data={charts}>
                     <Line type="monotone" dataKey="total" stroke="#8884d8" strokeWidth={2}></Line>
                     <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
                 </LineChart>
+                </ResponsiveContainer>
         </div>
     );
 };

@@ -28,7 +28,7 @@ const Question = ({questionn}) => {
     return (
         
         <div>
-            <div className='w-1/2 mx-auto border-red-400 border-2 my-4 rounded'>
+            <div className='w-3/4 lg:w-1/2 mx-auto border-red-400 border-2 my-4 rounded'>
                 <div className='flex justify-around'>
                     <h3 className='my-5'> <strong>Q.</strong> {question.slice(3, -4)}</h3>
                 <button onClick={()=> rightAnswer()}>
@@ -40,7 +40,7 @@ const Question = ({questionn}) => {
                     options.map(option => <div 
                     key={option[3]}
                     onClick={() => correction(option)}
-                    className="border-2 my-2 mx-20 p-2 bg-amber-100 hover:bg-amber-400 active:bg-amber-600 focus:bg-amber-600 rounded  text-center">
+                    className="border-2 my-2 mx-2 lg:mx-20 p-2 bg-amber-100 hover:bg-amber-400 active:bg-amber-600 focus:bg-amber-600 rounded  text-center">
                         <input type="radio" name={id} id={option}/> 
                          <label htmlFor={option} className="ml-2">{option} </label>
                     </div>
