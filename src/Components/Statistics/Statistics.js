@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const Statistics = () => {
     const [charts, setCharts] = useState([]);
@@ -24,9 +24,10 @@ const Statistics = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center underline text-2xl my-8 font-extrabold underline-offset-4'>Chart of Total Quizes</h2>
-                <LineChart className='mx-auto' width={500} height={400} data={charts}>
-                    <Line type="monotone" dataKey="total" stroke="#8884d8"></Line>
+            <h2 className='text-center underline text-2xl my-8 font-extrabold underline-offset-4'>Chart of Total Quizes
+            </h2>
+                <LineChart className='mx-auto sm:w-10 sm:h-10' width={400} height={300} data={charts}>
+                    <Line type="monotone" dataKey="total" stroke="#8884d8" strokeWidth={2}></Line>
                     <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
