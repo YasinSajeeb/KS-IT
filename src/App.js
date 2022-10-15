@@ -28,12 +28,13 @@ function App() {
   },
     { path: '/blog', 
     element: <Blog></Blog>
-  }   
-    ]
   },
   {
-    path: '*', element: <h3 className='text-center font-extrabold'>Ooops, Wrong page!!!!</h3>
+    path: '*', 
+    element: <h3 className='text-center font-extrabold'>Ooops, Wrong page!!!!<br/> Click on a valid link.</h3>
   }
+    ]
+  },
   ])
   return (
     <div className="App">
